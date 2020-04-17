@@ -15,4 +15,4 @@ Tested with Ableton Live 10.1.6 on Windows 10.
   * OS X:
     * _Ableton.app/Contents/App-Resources/MIDI Remote Scripts/MIDI_Mix_Plus_
 * Open Ableton Live and go to Preferences -> [Link / MIDI]
-* Choose MIDI Mix Plus as your Control Surface and MIDI Mix as Input and MIDI Mix as Output
+* Choose _MIDI Mix Plus_ as your __Control Surface__ and _MIDI Mix_ as __Input__ and _MIDI Mix_ as __Output__
