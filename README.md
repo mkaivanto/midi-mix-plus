@@ -18,3 +18,8 @@ Tested with Ableton Live 10.1.6 on Windows 10.
 * Choose _MIDI Mix Plus_ as your __Control Surface__ and _MIDI Mix_ as __Input__ and _MIDI Mix_ as __Output__
 
 ![ableton preferences](https://user-images.githubusercontent.com/47056934/79564313-19e48a80-80b7-11ea-9daf-074135393e7a.png)
+
+
+## Thanks to
+* https://github.com/gluon/AbletonLive10.1_MIDIRemoteScripts
+* https://livecontrol.q3f.org/ableton-liveapi/articles/introduction-to-the-framework-classes/
