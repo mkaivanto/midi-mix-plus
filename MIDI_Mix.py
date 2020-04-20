@@ -83,24 +83,33 @@ class MIDI_Mix(APC, OptimizedControlSurface):
         else:
             self.show_message('Controlling Track %d' % start)
     
-    def _set_session_highlight(self, track_offset, scene_offset, width, height, include_return_tracks):
-        """ Overrides APC classes' suppress flag and just calls the method to reposition the focus box. """
-        super(APC, self)._set_session_highlight(track_offset, scene_offset, width, height, include_return_tracks)
-    
     def _enable_components(self):
         with self.component_guard():
             for component in self.components:
                 component.set_enabled(True)
+        self._suppress_session_highlight = False
+        self.set_highlighting_session_component(self._session)
 
     def _on_identity_response(self, midi_bytes):
         super(MIDI_Mix, self)._on_identity_response(midi_bytes)
         self._enable_components()
 
     def _on_handshake_successful(self):
+        self._suppress_session_highlight = False
         pass
-
+    
     def _product_model_id_byte(self):
         return 49
 
     def _send_dongle_challenge(self):
         pass
+    
+    def port_settings_changed(self):
+        self.set_highlighting_session_component(None)
+        super(MIDI_Mix, self).port_settings_changed()
+        return
+
+    def disconnect(self):
+        self.set_highlighting_session_component(None)
+        super(MIDI_Mix, self).disconnect()
+        return
